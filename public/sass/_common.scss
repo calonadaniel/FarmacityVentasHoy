@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+body{ 
+    font-family: 'Poppins';
+    font-size:14px;
+    //line-height: 1.8em;
+    color: #000000;
+}
+
+html, body {
+    height:100%;
+}
+
+
+// Definir el color de tema de la palicacion por medio de variables. Cambiar los colores en el archivo variables.scss
+thead, nav, .card-header, .navbar-nav .dropdown-menu .dropdown-item {
+    background:$color1-farmacity;
+    color:$color2-farmacity;
+}
+
+.navbar-nav .dropdown-menu  {
+    background:$color1-farmacity;
+    color:$color2-farmacity;
+}
+
+.btn {
+    background:$color1-farmacity;
+    color:$color2-farmacity;
+}
+
+h2 {
+    color:$color1-farmacity;
+    
+}
+
+.card-title{
+    
+    color:$color1-farmacity;
+    text-decoration: underline;
+}

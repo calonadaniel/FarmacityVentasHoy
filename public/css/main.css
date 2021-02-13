@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+body {
+  font-family: 'Poppins';
+  font-size: 14px;
+  color: #000000;
+}
+
+html, body {
+  height: 100%;
+}
+
+thead, nav, .card-header, .navbar-nav .dropdown-menu .dropdown-item {
+  background: #69BA2F !important;
+  color: #ffff !important;
+}
+
+.navbar-nav .dropdown-menu {
+  background: #69BA2F !important;
+  color: #ffff !important;
+}
+
+.btn {
+  background: #69BA2F !important;
+  color: #ffff !important;
+}
+
+h2 {
+  color: #69BA2F !important;
+}
+
+.card-title {
+  color: #69BA2F !important;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=main.css.map */
