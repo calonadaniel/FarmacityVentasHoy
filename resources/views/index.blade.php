@@ -14,6 +14,10 @@
           <th class="text-center" scope="col">#</th>
           <th class="text-left"scope="col">Sucursal</th>
           <th scope="col">Ventas Totales</th>
+          <th scope="col">Lab Farmacity</th>
+          <th scope="col">Calox</th>
+          <th scope="col">La Santé</th>
+          <th scope="col">Adiuvo</th>
           <th class="text-center" scope="col">Última Actualización</th>
         </tr>
       </thead>  
@@ -25,14 +29,48 @@
           <th scope="row"scope="row">#</th>
           <td class="text-left">Total General</td>
           <td class="text-right">L. {{number_format(round($ventasGeneralTotal),2)}}</td>
-          <td class="text-left">{{substr(now(),0,-3)}}</td>
+          <td class="text-right">L. {{number_format(round($deptFarmacityTotal),2)}}</td>
+          <td class="text-right">L. {{number_format(round($deptCaloxTotal),2)}}</td>
+          <td class="text-right">L. {{number_format(round($deptLaSanteTotal),2)}}</td>
+          <td class="text-right">L. {{number_format(round($deptAdiuvoTotal),2)}}</td>
+          <td class="text-right">{{substr(now(),0,-3)}}</td>
         </tr>
         @foreach($ventasHoy as $ventasHoy) 
         <tr>
           <th class="text-center"scope="row">{{$num++}}</th>
           <td class="text-left">{{$ventasHoy->Farmacia}}</td>
-          <td class="text-right">L. {{number_format(round($ventasHoy->Venta),2)}}</td>
-          <td class="text-left">{{substr($ventasHoy->FechaHora,0,-3)}}</td>
+
+          @if($ventasHoy->Venta > 0)
+            <td class="text-right">L. {{number_format(round($ventasHoy->Venta),2)}}</td>
+          @else
+            <td class="text-right text-danger">L. {{number_format(round($ventasHoy->Venta),2)}}</td>
+          @endif
+
+          @if($ventasHoy->FC > 0)
+            <td class="text-right">L. {{number_format(round($ventasHoy->FC),2)}}</td>
+          @else
+            <td class="text-right text-danger">L. {{number_format(round($ventasHoy->FC),2)}}</td>
+          @endif
+
+          @if($ventasHoy->CLX > 0)
+            <td class="text-right">L. {{number_format(round($ventasHoy->CLX),2)}}</td>
+          @else
+            <td class="text-right text-danger">L. {{number_format(round($ventasHoy->CLX),2)}}</td>
+          @endif
+
+          @if($ventasHoy->LS > 0)
+            <td class="text-right">L. {{number_format(round($ventasHoy->LS),2)}}</td>
+          @else
+            <td class="text-right text-danger">L. {{number_format(round($ventasHoy->LS),2)}}</td>
+          @endif
+
+          @if($ventasHoy->AD > 0)
+            <td class="text-right">L. {{number_format(round($ventasHoy->AD),2)}}</td>
+          @else
+            <td class="text-right text-danger">L. {{number_format(round($ventasHoy->AD),2)}}</td>
+          @endif
+
+          <td class="text-right">{{substr($ventasHoy->FechaHora,0,-3)}}</td>
         </tr>
         @endforeach
       </tbody>

@@ -17,12 +17,16 @@ class ventashoyController extends Controller
 
         $ventasHoy = ventasHoy::orderby('Farmacia','asc')->get(); 
         $ventasGeneralTotal = ventasHoy::sum('Venta');
-        return view('index', compact('ventasHoy','ventasGeneralTotal'));
+        $deptFarmacityTotal = ventasHoy::sum('FC');
+        $deptCaloxTotal = ventasHoy::sum('CLX');
+        $deptLaSanteTotal = ventasHoy::sum('LS');
+        $deptAdiuvoTotal = ventasHoy::sum('AD');
+        return view('index', compact('ventasHoy','ventasGeneralTotal','deptFarmacityTotal','deptCaloxTotal','deptLaSanteTotal','deptAdiuvoTotal'));
     }
 
     public function about() {
  
-        return view('about');
+        return view('about'); 
     }
 
     public function pdf()

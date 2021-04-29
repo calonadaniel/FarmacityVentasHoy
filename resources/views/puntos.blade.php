@@ -71,28 +71,28 @@
           <th class="text-center"scope="row">{{$num++}}</th>
           <td class="text-left">{{$listafarmaciaspuntos->Farmacia}}</td>
 
-          @if($listafarmaciaspuntos->acumuladosMes < 1) 
+          @if($listafarmaciaspuntos->acumuladosMes <= 0) 
             <td class="text-danger text-right">{{number_format(round($listafarmaciaspuntos->acumuladosMes),2)}}</td>
           @else  
             <td class="text-right">{{number_format(round($listafarmaciaspuntos->acumuladosMes),2)}}</td>
           @endif
 
 
-          @if($listafarmaciaspuntos->canjeadosMes < 1) 
+          @if($listafarmaciaspuntos->canjeadosMes <= 0) 
             <td class="text-danger text-right">{{number_format(round($listafarmaciaspuntos->canjeadosMes),2)}}</td>
           @else  
             <td class="text-right">{{number_format(round($listafarmaciaspuntos->canjeadosMes),2)}}</td>
           @endif
 
 
-          @if($listafarmaciaspuntos->acumuladosHoy < 1) 
+          @if($listafarmaciaspuntos->acumuladosHoy <= 0) 
             <td class="text-danger text-right">{{number_format(round($listafarmaciaspuntos->acumuladosHoy),2)}}</td>
           @else  
             <td class="text-right">{{number_format(round($listafarmaciaspuntos->acumuladosHoy),2)}}</td>
           @endif
 
           
-          @if($listafarmaciaspuntos->canjeadosHoy < 1) 
+          @if($listafarmaciaspuntos->canjeadosHoy <= 0) 
             <td class="text-danger text-right">{{number_format(round($listafarmaciaspuntos->canjeadosHoy),2)}}</td>
           @else  
             <td class="text-right">{{number_format(round($listafarmaciaspuntos->canjeadosHoy),2)}}</td>
